@@ -20,7 +20,11 @@ class Dashboard extends StatelessWidget {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 30),
+                      padding: const EdgeInsets.only(
+                        top: 30,
+                        left: 15,
+                        right: 15,
+                      ),
                       child: Row(
                         children: [
                           InkWell(
@@ -29,6 +33,12 @@ class Dashboard extends StatelessWidget {
                               Icons.sort,
                               color: Colors.white,
                               size: 40,
+                            ),
+                          ),
+                          ClipRRect(
+                            child: Image.asset(
+                              "Images/woman.png",
+                              height: 50,
                             ),
                           )
                         ],
