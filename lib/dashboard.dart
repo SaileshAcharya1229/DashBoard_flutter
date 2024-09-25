@@ -37,7 +37,7 @@ class Dashboard extends StatelessWidget {
                           ),
                           ClipRRect(
                             child: Image.asset(
-                              "Images/woman.png",
+                              "asset/images/woman.png",
                               height: 50,
                             ),
                           )
