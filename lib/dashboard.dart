@@ -18,12 +18,13 @@ class Dashboard extends StatelessWidget {
                 height: height * 0.25,
                 width: width,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(
-                      height: 20,
-                    ),
+                    // const SizedBox(
+                    //   height: 20,
+                    // ),
                     Padding(
-                      padding: EdgeInsets.only(
+                      padding: const EdgeInsets.only(
                         top: 30,
                         left: 15,
                         right: 15,
@@ -33,7 +34,7 @@ class Dashboard extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {},
-                            child: Icon(
+                            child: const Icon(
                               Icons.sort,
                               color: Colors.white,
                               size: 40,
@@ -52,22 +53,33 @@ class Dashboard extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Padding(
+                    const Padding(
                       padding: EdgeInsets.only(
                         top: 20,
-                        left: 15,
-                        right: 15,
+                        left: 30,
                       ),
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             "DashBoard",
                             style: TextStyle(
                               fontSize: 30,
                               color: Colors.white,
-                              fontWeight: FontWeight.bold,
+                              fontWeight: FontWeight.w500,
                             ),
-                          )
+                          ),
+                          SizedBox(
+                            height: 10,
+                          ),
+                          Text(
+                            "Last Update: 7 Aug 2023",
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: Colors.white54,
+                              letterSpacing: 1,
+                            ),
+                          ),
                         ],
                       ),
                     ),
@@ -75,7 +87,7 @@ class Dashboard extends StatelessWidget {
                 ),
               ),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
@@ -84,6 +96,24 @@ class Dashboard extends StatelessWidget {
                 ),
                 height: height * 0.75,
                 width: width,
+                child: GridView.builder(
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    childAspectRatio: 1.1,
+                    mainAxisSpacing: 25,
+                  ),
+                  shrinkWrap: true,
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 6,
+                  itemBuilder: (context, index) {
+                    return InkWell(
+                      onTap: () {},
+                      child: Container(
+                        margin: EdgeInsets.all(8),
+                      ),
+                    );
+                  },
+                ),
               ),
             ],
           )),
